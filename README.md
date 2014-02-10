@@ -1,7 +1,8 @@
 #Recent Tweets 1 Challenge
 
-We're going to build a simple application that fetches the most recent tweets from a given Twitter username.
-There should be two types of URLs: the index page with a URL field to enter a Twitter username and a URL to display the most recent tweets of a particular username.
+We're going to build a simple application that _fetches_ the most recent _tweets_ from a given _Twitter username_.
+
+There should be _two types of URLs_: the _index page_ with a _URL field_ to _enter a Twitter username_ and a _URL to display_ the _most recent tweets_ of a particular username.
 
 That is,
 
@@ -11,39 +12,42 @@ http://localhost:9393/jfarmer
 
 should display the most recent tweets from https://twitter.com/jfarmer.
 
-The goal of this challenge is to become familiar with working with third-party APIs and the kind of architecture decisions necessary to support that. We'll add support for more API endpoints later.
+The goal of this challenge is to become familiar with working with _third-party APIs_ and the kind of _architecture_ decisions necessary to support that. We'll _add support_ for more _API endpoints_ later.
 
 ##Objectives
 
 ###Your First Twitter Application
-Add the [Twitter gem](http://rdoc.info/gems/twitter) to your Gemfile and run
+
+Add the [Twitter gem](http://rdoc.info/gems/twitter) to your _Gemfile_ and run
 
 ```
 bundle install
 ```
 
-to install the Gem. Read the Configuration section on the Twitter gem's GitHub page.
-You'll have to register a Twitter application on Twitter and get an API key and API secret. You can do this at [https://dev.twitter.com/apps/new](https://dev.twitter.com/apps/new) .
+to _install the Gem_. Read the _Configuration_ section on the _Twitter gem's GitHub_ page.
 
-This will also be your first [OAuth-based application](https://dev.twitter.com/docs/auth/oauth/faq) . OAuth is a standardized authentication protocol that allows a web application to delegate authentication to a third- party, e.g., "Log in via Twitter," "Log in via Facebook," "Log in via Google," etc.
+You'll have to _register_ a _Twitter application_ on _Twitter_ and get an _API key_ and _API secret_. You can do this at [https://dev.twitter.com/apps/new](https://dev.twitter.com/apps/new) .
 
-We don't be supporting "Log in via Twitter" yet, so when you go to create a Twitter application the only fields that matter are the application name (which must be unique across all Twitter applications) and application description. The application URL can be anything and the callback URL can be blank.
+This will also be your first [OAuth-based application](https://dev.twitter.com/docs/auth/oauth/faq) . _OAuth_ is a _standardized authentication protocol_ that allows a _web application_ to _delegate authentication_ to a third- party, e.g., "Log in via _Twitter_," "Log in via _Facebook_," "Log in via _Google_," etc.
 
-Note: You'll need a callback URL in a world where you want to support "Log in via Twitter."
+We don't be supporting "Log in via Twitter" yet, so when you go to create a Twitter application the only fields that matter are the _application name_ (which must be unique across all Twitter applications) and _application description_. The _application URL can be anything_ and the _callback URL can be blank_.
 
-After creating your application you'll be redirected to your application configuration page. The URL should look like
+Note: You'll need a _callback URL_ in a world where you want to support "Log in via Twitter."
+
+After creating your application you'll be _redirected_ to your _application configuration page_. The URL should look like
 ￼￼￼￼￼￼￼￼￼
 ```
 https://dev.twitter.com/apps/<#application ID>/show
 ```
 
-At the bottom of the page you'll see a section called Your access token, which looks roughly like this:
-[http://cl.ly/image/340S2F2t0V3Q](http://cl.ly/image/340S2F2t0V3Q) . Create an access token for yourself. You now have all the information you need to build a Twitter client. Follow the directions in the
-configuration section of the Twitter gem.
+At the bottom of the page you'll see a section called _Your access token_, which looks roughly like this:
 
-Here's a simple test of whether you understand how the Twitter gem and API work and whether your environment is set up correctly. Can you write a simple command-line Ruby program — no more than 5-10 lines — to tweet something from the command line on your Twitter account?
+[http://cl.ly/image/340S2F2t0V3Q](http://cl.ly/image/340S2F2t0V3Q) . Create an _access token_ for yourself. You now have _all the information_ you need to _build a Twitter client_. Follow the directions in the _configuration section_ of the Twitter gem.
 
-If you want to use rake console you'll have to require 'twitter' and configure the Twitter gem in your environment.rb file. While you can require these keys directly in your environment file, this is not a good idea if you are uploading your applications to GitHub or otherwise making this code (and your keys) public. To avoid this, you can put your keys in a yaml file and load it in your environment.rb file and then put this yaml file in your .gitignore file so you can access it locally but it will not be uploaded to GitHub. See [this post](https://gist.github.com/dbc-challenges/c513a933644ed9ba2bc8)
+Here's a simple _test_ of whether you understand how the _Twitter gem and API work_ and whether your _environment is set up correctly_. Can you write a simple _command-line Ruby program_ — no more than 5-10 lines — to _tweet_ something from the _command line_ on your _Twitter account_?
+
+If you want to use _rake console_ you'll have to _require 'twitter'_ and _configure_ the _Twitter gem_ in your _environment.rb_ file. While you can require these _keys_ directly in your _environment file_, this is not a good idea if you are _uploading your applications_ to _GitHub_ or otherwise making this code (and your _keys_) _public_. To avoid this, you can put your keys in a _yaml file_ and load it in your _environment.rb_ file and then put this _yaml_ file in your _.gitignore file_ so you can access it _locally_ but it will not be uploaded to _GitHub_. See [this post](https://gist.github.com/dbc-challenges/c513a933644ed9ba2bc8)
+
 
 ###Recent Tweets (not cached)
 Create a routes that looks like this: 
