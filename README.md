@@ -24,9 +24,12 @@ Add the [Twitter gem](http://rdoc.info/gems/twitter) to your _Gemfile_ and run
 bundle install
 ```
 
-to _install the Gem_. Read the _Configuration_ section on the _Twitter gem's GitHub_ page.
+to _install the Gem_. Read the [_Configuration_ section](https://github.com/sferik/twitter/blob/master/examples/Configuration.md) on the _Twitter gem's GitHub_ page.
 
-You'll have to _register_ a _Twitter application_ on _Twitter_ and get an _API key_ and _API secret_. You can do this at [https://dev.twitter.com/apps/new](https://dev.twitter.com/apps/new) .
+You'll have to _register_ a _Twitter application_ on _Twitter_ and get an _API key_ and _API secret_. You can do this at [https://dev.twitter.com/apps/new](https://dev.twitter.com/apps/new).
+
+**Problems: had to set my mobile phone number to get authorization.  That took 20 minutes.**
+
 
 This will also be your first [OAuth-based application](https://dev.twitter.com/docs/auth/oauth/faq) . _OAuth_ is a _standardized authentication protocol_ that allows a _web application_ to _delegate authentication_ to a third- party, e.g., "Log in via _Twitter_," "Log in via _Facebook_," "Log in via _Google_," etc.
 
